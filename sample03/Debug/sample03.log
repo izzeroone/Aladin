@@ -1,0 +1,5 @@
+﻿  ContraGame.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+d:\games\aladin\sample03\inputcontroller.h(59): warning C4467: usage of ATL attributes is deprecated
+  sample03.vcxproj -> D:\Games\ALADIN\sample03\Debug\sample03.exe
+  sample03.vcxproj -> D:\Games\ALADIN\sample03\Debug\sample03.pdb (Full PDB)
