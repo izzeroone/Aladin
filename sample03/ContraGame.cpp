@@ -1,6 +1,6 @@
 ﻿#include "ContraGame.h"
 #include "spritemanager.h"
-#include "Bill.h"
+#include "Aladdin.h"
 ContraGame::ContraGame(HINSTANCE hInstance, LPWSTR title) : Game(hInstance, title, WINDOW_WIDTH, WINDOW_HEIGHT)
 {
 
@@ -15,10 +15,13 @@ void ContraGame::init()
 	Game::init();
 	// init game
 #if _DEBUG
-	_bill = new Bill(3);
+	_bill = new Aladdin(3);
 	_bill->init();
-	_bill->setPosition(200, 500);
+	_bill->setPosition(200, 400);
 
+	//Load background
+	_Background = CreateSurfaceFromFile(DeviceManager::getInstance()->getDevice(), BACKGROUND1);
+	
 	//SceneManager::getInstance()->addScene(new Stage3(30));
 	//SceneManager::getInstance()->addScene(new PlayScene());
 	//SceneManager::getInstance()->addScene(new IntroScene());
@@ -48,12 +51,19 @@ void ContraGame::update(float deltatime)
 
 void ContraGame::draw()
 {
+	DeviceManager::getInstance()->getDevice()->StretchRect(
+		_Background,			// from 
+		NULL,				// which portion?
+		DeviceManager::getInstance()->getSurface(),		// to 
+		NULL,				// which portion?
+		D3DTEXF_NONE);
 	this->_spriteHandle->Begin(D3DXSPRITE_ALPHABLEND);
 
 	_bill->draw(this->_spriteHandle);
 //	SceneManager::getInstance()->draw(_spriteHandle);
 
 	this->_spriteHandle->End();
+
 }
 
 void ContraGame::loadResource()

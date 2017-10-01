@@ -41,7 +41,7 @@ void Bill::init()
 	_animations[eStatus::LAYING_DOWN] = new Animation(_sprite, 0.1f);
 	_animations[eStatus::LAYING_DOWN]->addFrameRect(eID::BILL, "lay_down_01", NULL);
 
-	_animations[eStatus::LOOKING_UP] = new Animation(_sprite, 0.1f);
+	/*_animations[eStatus::LOOKING_UP] = new Animation(_sprite, 0.1f);
 	_animations[eStatus::LOOKING_UP]->addFrameRect(eID::BILL, "shot_up_01", NULL);
 
 	_animations[eStatus::LOOKING_UP | eStatus::SHOOTING] = new Animation(_sprite, 0.1f);
@@ -81,7 +81,7 @@ void Bill::init()
 	_animations[eStatus::SWIMING | LOOKING_UP | SHOOTING]->animateFromTo(0, 1, false);
 
 	_animations[eStatus::DYING] = new Animation(_sprite, 0.2f, false);
-	_animations[eStatus::DYING]->addFrameRect(eID::BILL, "dead_01", "dead_02", "dead_03", "dead_04", NULL);
+	_animations[eStatus::DYING]->addFrameRect(eID::BILL, "dead_01", "dead_02", "dead_03", "dead_04", NULL);*/
 
 	this->setOrigin(GVector2(0.5f, 0.0f));
 	this->setStatus(eStatus::FALLING);
@@ -107,7 +107,15 @@ void Bill::update(float deltatime)
 	this->updateCurrentAnimateIndex();
 
 	_animations[_currentAnimateIndex]->update(deltatime);
+	// update ground
 
+	if (this->getPositionY() > GROUND)
+	{
+		this->setPositionY(GROUND);
+		auto gravity = (Gravity*)this->_componentList["Gravity"];
+		gravity->setStatus(eGravityStatus::SHALLOWED);
+		this->standing();
+	}
 
 	// update component để sau cùng để sửa bên trên sau đó nó cập nhật đúng
 	for (auto it = _componentList.begin(); it != _componentList.end(); it++)
@@ -387,7 +395,11 @@ void Bill::jump()
 	g->setStatus(eGravityStatus::FALLING__DOWN);
 
 }
-
+void Bill::falling()
+{
+	auto gravity = (Gravity*)this->_componentList["Gravity"];
+	gravity->setStatus(eGravityStatus::FALLING__DOWN);
+}
 void Bill::setStatus(eStatus status)
 {
 	// lặn / đang được bảo vệ  ko có chết
@@ -596,10 +608,10 @@ float Bill::getMovingSpeed()
 	return _movingSpeed;
 }
 
-void safeCheckCollision(BaseObject* activeobj, BaseObject* passiveobj, float dt)
-{
-	if (activeobj != nullptr && passiveobj != nullptr)
-	{
-		activeobj->checkCollision(passiveobj, dt);
-	}
-}
+//void safeCheckCollision(BaseObject* activeobj, BaseObject* passiveobj, float dt)
+//{
+//	if (activeobj != nullptr && passiveobj != nullptr)
+//	{
+//		activeobj->checkCollision(passiveobj, dt);
+//	}
+//}

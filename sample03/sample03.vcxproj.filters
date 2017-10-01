@@ -93,6 +93,9 @@
     <ClCompile Include="Land.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Aladdin.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="Land.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Aladdin.h">
+      <Filter>Header Files\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

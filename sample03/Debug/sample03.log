@@ -1,5 +1,8 @@
-﻿  ContraGame.cpp
+﻿  Aladdin.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-d:\games\aladin\sample03\inputcontroller.h(59): warning C4467: usage of ATL attributes is deprecated
-  sample03.vcxproj -> D:\Games\ALADIN\sample03\Debug\sample03.exe
-  sample03.vcxproj -> D:\Games\ALADIN\sample03\Debug\sample03.pdb (Full PDB)
+c:\users\donald trump\source\repos\aladin\sample03\inputcontroller.h(59): warning C4467: usage of ATL attributes is deprecated
+c:\users\donald trump\source\repos\aladin\sample03\aladdin.cpp(423): warning C4244: '-=': conversion from 'float' to 'LONG', possible loss of data
+c:\users\donald trump\source\repos\aladin\sample03\aladdin.cpp(433): warning C4244: '+=': conversion from 'float' to 'LONG', possible loss of data
+c:\users\donald trump\source\repos\aladin\sample03\aladdin.cpp(438): warning C4244: '-=': conversion from 'float' to 'LONG', possible loss of data
+  sample03.vcxproj -> C:\Users\Donald Trump\Source\Repos\Aladin\sample03\Debug\sample03.exe
+  sample03.vcxproj -> C:\Users\Donald Trump\Source\Repos\Aladin\sample03\Debug\sample03.pdb (Full PDB)

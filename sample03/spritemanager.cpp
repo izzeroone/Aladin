@@ -66,9 +66,13 @@ void SpriteManager::loadResource(LPD3DXSPRITE spriteHandle)
 	Sprite* sp = NULL;
 
 
-	Sprite* bill = new Sprite(spriteHandle, L"Resources//Images//bill_animation.png");
-	this->_listSprite[eID::BILL] = bill;
-	this->loadSpriteInfo(eID::BILL, "Resources//Images//bill_animation.txt");
+	Sprite* bill = new Sprite(spriteHandle, L"Resources//Images//aladdin_animation.png");
+	this->_listSprite[eID::ALADDIN] = bill;
+	this->loadSpriteInfo(eID::ALADDIN, "Resources//Images//aladdin_animation.txt");
+
+	//Sprite* aladdin = new Sprite(spriteHandle, L"Resources//Images//aladdin_animation.png");
+	//this->_listSprite[eID::ALADDIN] = aladdin;
+	//this->loadSpriteInfo(eID::ALADDIN, "Resources//Images//aladdin_animation.txt");
 
 	// Đọc file xml để tạo đối tượng sprite
 	//sp = loadXMLDoc(spriteHandle, L"Resources//Map//stage1.xml");

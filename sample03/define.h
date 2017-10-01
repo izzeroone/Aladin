@@ -27,6 +27,7 @@ using namespace std;
 enum eID
 {
 	BILL = 0,			// Main character.
+	ALADDIN = 38,
 	REDCANNON = 1,
 	SOLDIER = 2,
 	FALCON = 3,

@@ -20,12 +20,10 @@ update 30/11/2015
 
 
 #define BILL_MOVE_SPEED 125
-#define BILL_JUMP_VEL 450
-#define GRAVITY 800
-#define SHOOT_SPEED 200.0f
-#define MAX_BULLET 4
-#define REVIVE_TIME 2000
+#define BILL_JUMP_VEL -450
+#define GRAVITY 801
 #define PROTECT_TIME 3000
+#define GROUND 400
 
 [event_receiver(native)]
 class Bill : public BaseObject, public IControlable
@@ -59,6 +57,8 @@ public:
 	void moveLeft();
 	void moveRight();
 	void jump();
+
+	void falling();
 
 	float getMovingSpeed();
 

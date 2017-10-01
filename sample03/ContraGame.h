@@ -1,6 +1,6 @@
 #ifndef __CONTRA_GAME_H__
 #define __CONTRA_GAME_H__
-
+#define BACKGROUND1  L"bg.png"
 #include "Game.h"
 #include "BaseObject.h"
 class ContraGame : public Game
@@ -18,6 +18,7 @@ public:
 	void loadResource();
 
 private:
+	LPDIRECT3DSURFACE9 _Background;
 	BaseObject* _bill;
 };
 
